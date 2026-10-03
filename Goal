@@ -1,0 +1,9 @@
+The goal of this project is to move from reactive customer support to proactive, intelligent service operations using the capabilities of Salesforce.
+
+In traditional systems, issues are only addressed after a customer reports them, leading to downtime, poor experience, and delayed resolution. This project aims to solve that problem by building a system that can detect, predict, and act on potential failures before they happen.
+
+By simulating real-time device data and applying an AI-driven decision layer, the system continuously monitors device health, identifies risks early, and automatically initiates actions such as case creation after a time and customer notification—without waiting for manual intervention.
+
+Additionally, the project connects service operations with business value by identifying repeated failures and generating sales opportunities, demonstrating how support systems can also contribute to revenue growth.
+
+Overall, the objective is to showcase how modern systems can become autonomous, data-driven, and customer-centric, improving both operational efficiency and user experience.
