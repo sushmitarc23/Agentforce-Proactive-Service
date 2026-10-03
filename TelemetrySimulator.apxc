@@ -1,0 +1,39 @@
+global class TelemetrySimulator implements Schedulable {
+    
+    global void execute(SchedulableContext sc) {
+        // 1. Find up to 5 physical machines (Devices) in your org
+        List<Device__c> devices = [SELECT Id FROM Device__c LIMIT 5];
+        List<Device_Telemetry__c> newTelemetryRecords = new List<Device_Telemetry__c>();
+        
+        // 2. Loop through each machine and generate a random temperature reading
+        for(Device__c d : devices) {
+            Device_Telemetry__c dt = new Device_Telemetry__c();
+            dt.Device__c = d.Id;
+            
+            // Generates a random temperature between 130 and 200 degrees
+            dt.Temperature__c = 130 + (Math.random() * 70); 
+            
+            // Generates random usage hours between 1 and 12
+            dt.Usage_Hours__c = 1 + (Math.random() * 11);
+            
+            // Generates random power consumption
+            dt.Power_Consumption__c = 50 + (Math.random() * 50);
+            
+            newTelemetryRecords.add(dt);
+        }
+        
+        // 3. Insert the fake data into Salesforce (This triggers your AI Flow!)
+        if(newTelemetryRecords.size() > 0) {
+            insert newTelemetryRecords;
+        }
+    }
+}
+
+//new TelemetrySimulator().execute(null);
+
+
+
+
+
+
+
